@@ -4,12 +4,18 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, ResponsiveContainer } fro
 
 
 import { FaHome } from "react-icons/fa";
+import { PiEyeFill } from "react-icons/pi";
+import { IoPersonSharp } from "react-icons/io5";
 import { FaBuilding } from "react-icons/fa";
 import { FaFileAlt } from "react-icons/fa";
+import { CiCirclePlus } from "react-icons/ci";
+import { LiaStarSolid } from "react-icons/lia";
 import { FaBell } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import WebsiteVisitorsChart from '../components/WebsiteVisitorsChart/WebsiteVisitorsChart';
+import LatestTransactions from '../components/LatestTransactions/LatestTransactions';
 
 
 
@@ -55,7 +61,7 @@ const HomePage = () => {
   ];
 
   const StatCard = ({ icon: Icon, title, value, change, isPositive }) => (
-    <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
+    <div className="bg-black rounded-lg p-6 shadow-[inset_0_0_19px_0_rgba(179,244,86,0.5)]">
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-gray-500 text-sm font-medium">{title}</h3>
         <Icon className="w-5 h-5 text-gray-400" />
@@ -74,7 +80,7 @@ const HomePage = () => {
   );
 
   return (
-    <div className="  flex overflow-auto min-h-[250vh]">
+    <div className="bg-black flex overflow-auto min-h-[250vh]">
       
 
       {/* Main Content */}
@@ -85,29 +91,29 @@ const HomePage = () => {
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <StatCard
-              icon={FaHome}
-              title="Check in"
+              icon={PiEyeFill}
+              title="Pageviews"
               value="9870"
               change="8.5%"
               isPositive={true}
             />
             <StatCard
-              icon={FaHome}
-              title="Check out"
+              icon={IoPersonSharp}
+              title="Monthly users"
               value="654"
               change="2.5%"
               isPositive={true}
             />
             <StatCard
-              icon={FaHome}
-              title="Available Rooms"
+              icon={CiCirclePlus}
+              title="New sign ups"
               value="12"
               change="4.3%"
               isPositive={false}
             />
             <StatCard
-              icon={FaHome}
-              title="Occupied Room"
+              icon={LiaStarSolid}
+              title="Subscriptions"
               value="12"
               change="1.3%"
               isPositive={true}
@@ -115,9 +121,9 @@ const HomePage = () => {
           </div>
 
           {/* Earnings Chart */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-8">
+          <div className="bg-black text-white rounded-lg shadow-[inset_0_0_19px_0_rgba(179,244,86,0.5)] p-6 mb-8">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-semibold text-gray-900">Earning Details</h3>
+              <h3 className="text-lg font-semibold text-white">Earning Details</h3>
               <select
                 value={selectedYear}
                 onChange={(e) => setSelectedYear(e.target.value)}
@@ -157,70 +163,11 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Rooms Table */}
-          <div className="bg-white rounded-lg shadow-sm border border-gray-100">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead className="border-b border-gray-200 bg-gray-50">
-                  <tr>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Room ID</th>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Room Type</th>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Status</th>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Available from</th>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Available to</th>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Hotel</th>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Price / day</th>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Distance (from hrm)</th>
-                    <th className="text-left py-4 px-6 text-sm font-medium text-gray-700">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {roomsData.map((room, index) => (
-                    <tr key={index} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-                      <td className="py-4 px-6">
-                        <div className="flex items-center">
-                          <input
-                            type="checkbox"
-                            className="w-4 h-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500 mr-3"
-                          />
-                          <span className="text-sm font-medium text-gray-900">{room.id}</span>
-                        </div>
-                      </td>
-                      <td className="py-4 px-6 text-sm text-gray-600">{room.type}</td>
-                      <td className="py-4 px-6">
-                        <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${room.status === 'Available'
-                            ? 'bg-green-100 text-green-800'
-                            : 'bg-red-100 text-red-800'
-                          }`}>
-                          <div className={`w-1.5 h-1.5 rounded-full mr-1.5 ${room.status === 'Available' ? 'bg-green-600' : 'bg-red-600'
-                            }`}></div>
-                          {room.status}
-                        </span>
-                      </td>
-                      <td className="py-4 px-6 text-sm text-gray-600">{room.availableFrom}</td>
-                      <td className="py-4 px-6 text-sm text-gray-600">{room.availableTo}</td>
-                      <td className="py-4 px-6 text-sm text-gray-600">{room.hotel}</td>
-                      <td className="py-4 px-6 text-sm text-gray-600">{room.price}</td>
-                      <td className="py-4 px-6 text-sm text-gray-600">{room.distance}</td>
-                      <td className="py-4 px-6">
-                        <div className="flex items-center space-x-2">
-                          <button className="p-1 text-gray-400 hover:text-teal-600 transition-colors">
-                            <FaHome className="w-4 h-4" />
-                          </button>
-                          <button className="p-1 text-gray-400 hover:text-blue-600 transition-colors">
-                            <FaHome className="w-4 h-4" />
-                          </button>
-                          <button className="p-1 text-gray-400 hover:text-red-600 transition-colors">
-                            <FaHome className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+          <div className='w-full flex items-stretch  justify-between gap-8 bg-black rounded-lg shadow-sm'>
+            <WebsiteVisitorsChart />
+            <LatestTransactions />
           </div>
+
         </div>
       </div>
     </div>

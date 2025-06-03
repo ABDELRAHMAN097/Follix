@@ -22,7 +22,7 @@ const SideBAr = () => {
     { label: translate('sidebar.supportSystem'), icon: FaTrash, active: false, path: '/support-system' },
   ];
     return (
-        <div className={`fixed top-0 ${language === 'ar' ? 'right-0' : 'left-0'} bottom-0 z-40 w-64 bg-black border-r border-gray-200 shadow-lg`}>
+        <div className={`fixed top-0 ${language === 'ar' ? 'right-0' : 'left-0'} bottom-0 z-40 w-64 bg-black shadow-lg`}>
                   {/* Logo placeholder */}
                  <div className="w-full px-6">
                    <div className="flex items-center justify-center space-x-3 mb-8 pb-4 border-b border-primary w-full">

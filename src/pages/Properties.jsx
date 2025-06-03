@@ -92,9 +92,9 @@ const Properties = () => {
   }, [currentPage]);
 
   return (
-    <div className="p-4">
+    <div className="p-4 bg-black">
       {/* nav 5555 */}
-      <div className="flex items-center justify-between py-2">
+      <div className="flex items-center justify-between py-2 bg-black">
         {/* buttonssss / 2 */}
         <div className="flex items-center justify-center gap-2">
           {/* زر الإضافة */}

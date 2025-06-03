@@ -28,8 +28,8 @@ function App() {
         <meta name="description" content="A React app with all required libraries" />
       </Helmet>
 
-      <div>
-        <Layout className="bg-black">
+      <div className="bg-black">
+        <Layout>
           <AppRoutes />
         </Layout>
       </div>
