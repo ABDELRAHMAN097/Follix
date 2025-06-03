@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-primary: #B3F456CC;
+  --color-secondary: #39D2B4;
+}
+
+
+@theme {
+  --font-family-display: "Tajawal", "sans-serif";
+  --color-primary: oklch(var(--color-primary));
+  --color-secondary: oklch(var(--color-secondary));
+
+}
+
+::-webkit-scrollbar {
+  @apply w-[8px] h-3;
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-full bg-primary/20;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+* {
+  font-family: var(--font-family-display) !important;
+}
+
+.animation {
+  transition: all 0.4s ease-in-out;
+}
+
+
+
+/* *,
+*::before,
+*::after {
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg") 5 5, auto;
+} */
+
+
+.react-datepicker__close-icon {
+  @apply bg-primary rounded-full !hidden;
+}
+
+.react-datepicker-wrapper {
+  @apply w-full;
+}
+
+input[type="checkbox"] {
+  accent-color: #134049;
+  scale: 1.3;
+  cursor: pointer;
+  margin-left: 8px;
+  margin-right: 8px;
+}

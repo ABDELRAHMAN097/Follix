@@ -1,0 +1,75 @@
+{
+  "links": {
+
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "Sorry, the page you are looking for does not exist or has been moved.",
+    "backHome": "Back to Home",
+    "helpText": "If you think this is an error, please contact support"
+  },
+  "login": {
+    "email": "Email Address",
+    "password": "Password",
+    "rememberMe": "Remember Me",
+    "forgotPassword": "Forgot Password?",
+    "login": "Login",
+    "submitting": "Logging in...",
+    "emailPlaceholder": "Email Address",
+    "passwordPlaceholder": "Password"
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "subtitle": "Enter your email address and we'll send you a link to reset your password",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "submit": "Send Reset Link",
+    "submitting": "Sending...",
+    "backToLogin": "Back to Login",
+    "successMessage": "Password reset link has been sent to your email"
+  },
+  "otp": {
+    "title": "Verification Code",
+    "subtitle": "Enter the 6-digit code sent to your email",
+    "codeLabel": "Verification Code",
+    "submit": "Verify Code",
+    "submitting": "Verifying...",
+    "resendCode": "Resend Code",
+    "resendCodeTimer": "Resend code in {seconds} seconds",
+    "backToLogin": "Back to Login",
+    "successMessage": "Verification successful",
+    "invalidCode": "Invalid verification code"
+  },
+  "resetPassword": {
+    "title": "Reset Password",
+    "subtitle": "Enter your new password",
+    "password": "New Password",
+    "passwordPlaceholder": "Enter your new password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your new password",
+    "submit": "Reset Password",
+    "submitting": "Resetting...",
+    "backToLogin": "Back to Login",
+    "successMessage": "Password has been reset successfully",
+    "passwordsMustMatch": "Passwords must match"
+  },
+  "validation": {
+    "required": "This field is required",
+    "invalidEmail": "Please enter a valid email address",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "passwordsMustMatch": "Passwords must match",
+    "invalidOTP": "Please enter a valid 6-digit code"
+  },
+  "navbar": {
+    "overview": "Overview",
+    "search": "Search"
+  },
+  "sidebar": {
+    "overview": "Overview",
+    "properties": "Properties",
+    "content": "Content",
+    "requests": "Requests",
+    "users": "Users",
+    "supportSystem": "Support System"
+  }
+}
